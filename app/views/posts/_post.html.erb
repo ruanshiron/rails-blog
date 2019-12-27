@@ -1,5 +1,5 @@
 <div class="post-preview" id="post-<%= post.id %>">
-  <a href="post.html">
+  <a href="<%=polymorphic_path post%>">
     <h2 class="post-title">
       <%= post.title%>
     </h2>
@@ -7,8 +7,21 @@
       Many say exploration is part of our destiny, but it’s actually our duty to future generations.
     </h3> %>
   </a>
-  <p class="post-meta">Posted by
-    <a href="#">Start Bootstrap</a>
-    <%= link_to post.user.name, post.user%>
-    on July 8, 2019</p>
+  <p class="post-meta">
+    Posted by
+    
+    <% if current_user?(post.user) %>
+      <%= link_to "You", post.user%>
+      <%= time_ago_in_words(post.created_at) %> ago 
+      <%= link_to "delete", post, method: :delete,
+                                          data: { confirm: "You sure?" }, remote: :true, class: "destroy-micropost" %>
+
+    <% else %>
+      <%= link_to post.user.name, post.user%>
+      <%= time_ago_in_words(post.created_at) %> ago 
+      <%= link_to "delete", post, method: :delete,
+                                          data: { confirm: "You sure?" }, remote: :true, class: "destroy-micropost" %>
+    <% end %>  
+  </p>
 </div>
+<hr/>

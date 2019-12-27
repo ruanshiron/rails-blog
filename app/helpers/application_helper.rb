@@ -9,4 +9,9 @@ module ApplicationHelper
         end
         flash_messages.join("\n").html_safe
     end
+
+    # Returns true if the given user is the current user.
+    def current_user?(user)
+        user == current_user
+    end
 end
