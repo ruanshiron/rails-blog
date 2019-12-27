@@ -1,0 +1,14 @@
+<div class="post-preview" id="post-<%= post.id %>">
+  <a href="post.html">
+    <h2 class="post-title">
+      <%= post.title%>
+    </h2>
+    <%# <h3 class="post-subtitle">
+      Many say exploration is part of our destiny, but it’s actually our duty to future generations.
+    </h3> %>
+  </a>
+  <p class="post-meta">Posted by
+    <a href="#">Start Bootstrap</a>
+    <%= link_to post.user.name, post.user%>
+    on July 8, 2019</p>
+</div>
