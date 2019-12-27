@@ -39,11 +39,12 @@ gem 'bootsnap', '>= 1.1.0', require: false
 # Authentication Devise 
 gem 'devise'
 
-# Boostrap & jquery
+# Boostrap & jquery & Toast
 gem 'bootstrap'
 gem 'sassc-rails', '>= 2.1.0'
 gem 'jquery-rails'
 gem 'font-awesome-sass', '~> 5.12.0'
+gem 'toastr-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
