@@ -1,4 +1,15 @@
-<h2>Change your password</h2>
+<header class="masthead" style="background-image: url('')">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="site-heading">
+          <h2>Change your password</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
