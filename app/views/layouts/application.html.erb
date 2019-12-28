@@ -6,7 +6,7 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application' %>
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
@@ -32,13 +32,27 @@
             <li class="nav-item">
               <%= link_to "Help", pages_help_path, class: "nav-link"%>
             </li>
-            <li class="nav-item">
+            
             <% if user_signed_in? %>
-              <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "nav-link") %>
-            <% else %>
-              <%= link_to('Login', new_user_session_path, class: "nav-link") %> 
-            <% end %>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 <%=current_user.name%>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <%= link_to("New", new_post_path, class: "dropdown-item") %>
+                <div class="dropdown-divider"></div>
+                <%= link_to("My Posts", user_path(current_user), class: "dropdown-item") %>
+                <%= link_to("Edit Profile", edit_user_registration_path, class: "dropdown-item") %>
+                <div class="dropdown-divider"></div>
+                 <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "dropdown-item") %>
+              </div>
             </li>
+            <% else %>
+            <li class="nav-item">
+              <%= link_to('Login', new_user_session_path, class: "nav-link") %> 
+            </li>
+            <% end %>
+
           </ul>
         </div>
       </div>

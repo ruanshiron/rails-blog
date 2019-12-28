@@ -14,13 +14,11 @@
       <%= link_to "You", post.user%>
       <%= time_ago_in_words(post.created_at) %> ago 
       <%= link_to "delete", post, method: :delete,
-                                          data: { confirm: "You sure?" }, remote: :true, class: "destroy-micropost" %>
+                                          data: { confirm: "You sure?" }, class: "destroy-post" %>
 
     <% else %>
       <%= link_to post.user.name, post.user%>
       <%= time_ago_in_words(post.created_at) %> ago 
-      <%= link_to "delete", post, method: :delete,
-                                          data: { confirm: "You sure?" }, remote: :true, class: "destroy-micropost" %>
     <% end %>  
   </p>
 </div>

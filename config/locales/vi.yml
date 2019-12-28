@@ -1,0 +1,5 @@
+vi:
+  hello: "Hello world"
+  will_paginate:
+    previous_label: <span class="btn btn-primary float-right">&larr; Mới hơn</span>
+    next_label: <span class="btn btn-primary float-right">Cũ hơn &rarr;</span>

@@ -35,13 +35,15 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
+
+        <!-- Pager -->
         <%= render @posts%>
+
         <!-- Pager -->
         <div class="clearfix">
-          <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+          <%= will_paginate @posts, :page_links => false%>
         </div>
 
-        
       </div>
     </div>
   </div>
