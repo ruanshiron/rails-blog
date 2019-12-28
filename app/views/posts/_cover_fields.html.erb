@@ -1,0 +1,14 @@
+<tr class="nested-fields"> 
+  <td>
+    <%= f.file_field :picture %>
+    <%= f.hidden_field :picture_cache, value: f.object.picture_cache %>
+  </td>
+  <td class="thumb"> 
+    <% if f.object.picture.url.present? %>
+      <%= image_tag f.object.picture.url %>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to_remove_association (t "remove"), f %>
+  </td>
+</tr>

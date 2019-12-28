@@ -17,6 +17,7 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require toastr
+//= require cocoon
 
 toastr.options = {
     "closeButton": false,

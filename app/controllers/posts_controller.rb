@@ -16,12 +16,14 @@ class PostsController < ApplicationController
             flash[:success] = "Post created!"
             redirect_to root_url
         else
-            flash[:warning] = "Post created Fail, please try again!"
+            flash[:warning] = "Post created Fail, please try fill all !"
+            redirect_to request.referrer
         end
     end
 
     def show
         @post = Post.find(params[:id])
+        @covers = @post.covers
     end
 
     def destroy
@@ -32,7 +34,7 @@ class PostsController < ApplicationController
 
     private
         def post_params
-            params.require(:post).permit(:title, :content)
+            params.require(:post).permit(:title, :content, covers_attributes: [ :id, :picture, :picture_cache, :_destroy ])
         end
 
         def correct_user

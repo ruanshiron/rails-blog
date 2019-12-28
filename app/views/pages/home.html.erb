@@ -1,28 +1,28 @@
 
 <!-- Page Header -->
 <% if user_signed_in? %>
-  <header class="masthead" style="background-image: url('')">
+  <header class="masthead" style="background-image: url('<%= image_url 'home-bg.jpg' %>')">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="site-heading">
-            <h1>Hello</h1>
-            <span class="subheading">username ready to blog today?</span>
+            <h1><%= t "home.hello"%></h1>
+            <span class="subheading"><%= current_user.name%>, <%= t "home.how_are_you"%></span>
           </div>
         </div>
       </div>
     </div>
   </header>
 <% else %>
-  <header class="masthead" style="background-image: url('')">
+  <header class="masthead" style="background-image: url('<%= image_url 'home-bg.jpg' %>')">
     <div class="overlay"></div>
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="site-heading">
-            <h1>Welcome</h1>
-            <%= link_to "Sign Up now~!", new_user_registration_path, class: "btn btn btn-light" %>
+            <h1><%= t "home.welcome"%></h1><br/>
+            <%= link_to t("home.sign_up_now"), new_user_registration_path, class: "btn btn btn-light" %>
           </div>
         </div>
       </div>

@@ -8,17 +8,19 @@
     </h3> %>
   </a>
   <p class="post-meta">
-    Posted by
+    <%= t "post.posted_by"%>
     
     <% if current_user?(post.user) %>
       <%= link_to "You", post.user%>
-      <%= time_ago_in_words(post.created_at) %> ago 
+      <%= time_ago_in_words(post.created_at) %> 
+      <%= t "post.ago"%>
       <%= link_to "delete", post, method: :delete,
                                           data: { confirm: "You sure?" }, class: "destroy-post" %>
 
     <% else %>
       <%= link_to post.user.name, post.user%>
-      <%= time_ago_in_words(post.created_at) %> ago 
+      <%= time_ago_in_words(post.created_at) %> 
+      <%= t "post.ago"%> 
     <% end %>  
   </p>
 </div>

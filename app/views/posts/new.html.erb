@@ -1,10 +1,10 @@
-<header class="masthead" style="background-image: url('')">
+<header class="masthead" style="background-image: url('<%= image_url "post-sample-image.jpg"%>')">
   <div class="overlay"></div>
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
         <div class="site-heading">
-          <h2>What new today~~~</h2>
+          <h2><%= t "new_posts.what_new_today"%></h2>
         </div>
       </div>
     </div>
@@ -31,8 +31,21 @@
         </div>
         <br/>
         </div>
+
         <div class="control-group">
-          <%= f.cktext_area :content, rows: 10, placeholder: :content %>
+          <%= f.label :covers, class: "col-md-4 control-label"%>
+          <div class="col-md-4">
+            <table class="user-photo-form">
+              <%= f.fields_for :covers do |cover| %>
+                <%= render "cover_fields", f: image %>
+              <% end %>
+              <%= link_to_add_association (t "add_a_photo"), f, :covers, class: "btn btn-default" %>
+            </table>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <%= f.cktext_area :content, rows: 10 %>
         </div>
         <div class="form-group">
           <br/>
