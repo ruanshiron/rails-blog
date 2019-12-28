@@ -1,3 +1,40 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.stats {
+    overflow: auto;
+    margin-top: 10px;
+    padding: 0;
+    a {
+      float: left;
+      padding: 0 10px;
+      border-left: 1px solid white;
+      color: white;
+      &:first-child {
+        padding-left: 0;
+        border: 0;
+      }
+      &:hover {
+        text-decoration: none;
+        color: #0085A1;
+      }
+    }
+    strong {
+      display: block;
+    }
+  }
+  
+  .user_avatars {
+    overflow: auto;
+    margin-top: 10px;
+    .gravatar {
+      margin: 1px 1px;
+    }
+    a {
+      padding: 0;
+    }
+  }
+  
+  .users.follow {
+    padding: 0;
+  }

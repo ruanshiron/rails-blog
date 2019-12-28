@@ -31,3 +31,11 @@ title = Faker::Lorem.paragraph(sentence_count: 2)
 content = Faker::Lorem.paragraph(sentence_count: 20)
 users.each { |user| user.posts.create!(title: title, content: content) }
 end
+
+# Following relationships
+users = User.all
+user  = users.first
+following = users[2..50]
+followers = users[3..40]
+following.each { |followed| user.follow(followed) }
+followers.each { |follower| follower.follow(user) }
