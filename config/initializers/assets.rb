@@ -15,3 +15,4 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 Rails.application.config.assets.precompile += %w( clean-blog.js )
 Rails.application.config.assets.precompile += %w( contact_me.js )
 Rails.application.config.assets.precompile += %w( jqBootstrapValidation.js )
+Rails.application.config.assets.precompile += %w[ckeditor/config.js]
