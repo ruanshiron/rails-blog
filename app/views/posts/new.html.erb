@@ -32,17 +32,19 @@
         <br/>
         </div>
 
+        
+
         <div class="control-group">
-          <%= f.label :covers, class: "col-md-4 control-label"%>
-          <div class="col-md-4">
             <table class="user-photo-form">
               <%= f.fields_for :covers do |cover| %>
                 <%= render "cover_fields", f: image %>
               <% end %>
-              <%= link_to_add_association (t "add_a_photo"), f, :covers, class: "btn btn-default" %>
+
+              <br>
+              <%= link_to_add_association (t "add_a_photo"), f, :covers, class: "btn btn-success" %>
             </table>
-          </div>
         </div>
+        <br>
 
         <div class="control-group">
           <%= f.cktext_area :content, rows: 10 %>
