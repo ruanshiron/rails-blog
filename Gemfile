@@ -57,7 +57,7 @@ gem 'will_paginate', '~> 3.1.0'
 gem "ckeditor"
 
 # Upload suport
-gem 'carrierwave', '1.2.2'
+gem 'carrierwave', '1.3.2'
 gem 'mini_magick'
 gem 'cloudinary'
 
